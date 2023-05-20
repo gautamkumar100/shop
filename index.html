@@ -17,6 +17,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             box-sizing: border-box;
+            background-color: aqua;
         }
         h1 {
             text-align: center;
@@ -30,10 +31,25 @@
             background-color: aqua;
             margin: 0.25%;
             text-align: center;
+            animation-name: round;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            /* animation: round 2s linear 0 infinite forwards; */
         }
         .item:hover{
             border: 1px solid green;
             border-radius: 50%;
+            animation: none;
+        }
+
+        @keyframes round{
+            0%,100%{
+                border-radius: 0%;
+            }
+            50%{
+                border-radius: 50%
+            }
         }
         
     </style>
@@ -68,9 +84,16 @@
     }
    let items = document.getElementsByClassName("item");
    let rainbow = function(){for(let i=0; i<items.length; i++){
-    items[i].style.backgroundColor = col()
-   }}
-   rainbow();
+    items[i].style.backgroundColor = col();
+    let cont = document.getElementsByClassName("container")[0];
+    cont.style.backgroundColor = col();
+}}
+    setInterval(() => {
+    bgc()
+   }, 1000);
+   setInterval(() => {
+    rainbow();
+   }, 1000);
 
 </script>
 </html>
