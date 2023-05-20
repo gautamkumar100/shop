@@ -12,14 +12,30 @@
             box-sizing: border-box;
             ;
         }
+        .container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            background-color: yellow;
+            height: 6vh;
+        }
         .item{
-            width: 25%;
+            width: 24%;
             height: 20vh;
             background-color: aqua;
-            display: inline-block;
-            margin: 0 ;
+            margin: 0.25%;
             text-align: center;
         }
+        .item:hover{
+            border: 1px solid green;
+            border-radius: 50%;
+        }
+        
     </style>
 </head>
 <body>
